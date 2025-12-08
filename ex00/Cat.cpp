@@ -13,7 +13,7 @@ Cat::Cat(const Cat& original)
 
 Cat& Cat::operator=(const Cat& original)
 {
-    type = original.type;
+    type = original.type;   
     return (*this);
 }
 

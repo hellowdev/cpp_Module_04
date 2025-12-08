@@ -18,6 +18,18 @@ Brain& Brain::operator=(const Brain& original)
     return (*this);
 }
 
+void Brain::setIdea(std::string cont)
+{
+    for (int i = 0; i < 100; i++)
+        ideas[i] = cont;
+}
+
+void Brain::getIdea()
+{
+    for (int i = 0; i < 100; i++)
+        std::cout << ideas[i] << '\n';
+}
+
 Brain::~Brain()
 {
     std::cout << "Brain Destructor Called\n";

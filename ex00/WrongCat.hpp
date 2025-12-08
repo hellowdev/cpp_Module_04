@@ -1,7 +1,6 @@
 #ifndef WRONGCAT
 #define WRONGCAT
 #include "WrongAnimal.hpp"
-#include <iostream>
 
 class WrongCat : public WrongAnimal
 {

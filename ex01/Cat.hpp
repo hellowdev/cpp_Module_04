@@ -12,6 +12,8 @@ class Cat : public Animal
         Cat(const Cat& original);
         Cat& operator=(const Cat& original);
         void makeSound() const;
+        void setCbrain(std::string cont);
+        void getCbrain();
         ~Cat();
 };
 

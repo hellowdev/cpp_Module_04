@@ -27,7 +27,7 @@ int main()
         std::cout << "-------------MORE TESTS------------\n";
         AMateria *i = new Ice;
         AMateria *c = new Cure;
-        Character oldcharac("hi");
+        Character oldcharac("ME");
         oldcharac.equip(i);
         oldcharac.equip(c);
         oldcharac.use(0, oldcharac);

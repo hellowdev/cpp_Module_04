@@ -2,7 +2,7 @@ CXX = c++
 
 NAME = myprog
 
-CXXFLAGS = -Wall -Wextra -Werror 
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC = main.cpp Cat.cpp Dog.cpp Animal.cpp WrongCat.cpp  WrongAnimal.cpp Brain.cpp
 

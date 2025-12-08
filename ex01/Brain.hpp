@@ -10,6 +10,8 @@ class Brain
         Brain();
         Brain(const Brain& original);
         Brain& operator=(const Brain& original);
+        void setIdea(std::string cont);
+        void getIdea();
         ~Brain();
 };
 

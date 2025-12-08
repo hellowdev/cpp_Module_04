@@ -16,14 +16,18 @@ int main()
     delete meta;
     delete j;
     delete i;
-std::cout  << "-----------TEST OF WRONG ANIMALS-------------\n";
+
+{
+    std::cout  << "-----------TEST OF WRONG ANIMALS-------------\n";
+
     const WrongAnimal *wrongAn  = new WrongAnimal();
     const WrongAnimal *wrongcat = new WrongCat();
 
     std::cout << wrongcat->getType() << " " << std::endl;
-    wrongcat->makeSound(); // this will call the base cuz we didnt use virtual
     wrongAn->makeSound();
+    wrongcat->makeSound(); // this will call the base cuz we didnt use virtual
     delete wrongAn;
     delete wrongcat; // we have leaks of the derived class cuz we didnt use virtual
+}
 return 0;
 }

@@ -9,27 +9,34 @@ Dog::Dog()
 
 Dog::Dog(const Dog& original)
 {
-    if (this->DogBrain != original.DogBrain)
+    DogBrain = new Brain(*original.DogBrain);
+    type = original.type;
+}
+
+Dog& Dog::operator=(const Dog& original)
+{
+    if (this != &original)
     {
-        DogBrain = new Brain(*original.DogBrain);
+        delete DogBrain;
         type = original.type;
+        DogBrain = new Brain(*original.DogBrain);
     }
+    return (*this);
+}
+
+void Dog::setCbrain(std::string cont)
+{
+    DogBrain->setIdea(cont);
+}
+
+void Dog::getCbrain()
+{
+    DogBrain->getIdea();
 }
 
 void Dog::makeSound() const
 {
     std::cout << type << " bark\n";
-}
-
-Dog& Dog::operator=(const Dog& original)
-{
-    if (this->DogBrain != original.DogBrain)
-    {
-        delete DogBrain;
-        DogBrain = new Brain(*original.DogBrain);
-        type = original.type;
-    }
-    return (*this);
 }
 
 Dog::~Dog()

@@ -31,10 +31,10 @@ Character& Character::operator=(const Character& original)
 {
     if (this != &original)
     {
-        Character::deleteSlots();
         charName = original.charName;
         for (int i = 0; i < 4; i++)
         {
+            delete slots[i];
             if (original.slots[i])
                 this->slots[i] = original.slots[i]->clone();  // new original.slots[i]->getType()
             else
@@ -79,13 +79,8 @@ void Character::use(int idx, ICharacter& target)
     }
 }
 
-void Character::deleteSlots()
+Character::~Character()
 {
     for (int i = 0; i < 4; i++)
         delete slots[i];
-}
-
-Character::~Character()
-{
-    Character::deleteSlots();
 }

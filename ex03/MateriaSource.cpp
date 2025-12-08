@@ -25,11 +25,9 @@ MateriaSource& MateriaSource::operator=(const MateriaSource& original)
     {
         for (int i = 0; i < 4; i++)
         {
+            delete slots[i];
             if (original.slots[i])
-            {
-                delete slots[i];
                 slots[i] = original.slots[i]->clone(); // deep copy
-            }
             else
                 slots[i] = NULL;
         }

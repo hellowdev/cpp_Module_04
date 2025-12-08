@@ -2,7 +2,7 @@ CXX = c++
 
 NAME = myprog
 
-CXXFLAGS = -Wall -Wextra -Werror 
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC = main.cpp AMateria.cpp Ice.cpp Character.cpp Cure.cpp MateriaSource.cpp
 OBJ = ${SRC:.cpp=.o}

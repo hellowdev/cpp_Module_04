@@ -9,11 +9,19 @@ Dog::Dog()
 
 Dog::Dog(const Dog& original)
 {
-    if (this->DogBrain != original.DogBrain)
+    DogBrain = new Brain(*original.DogBrain);
+    type = original.type;
+}
+
+Dog& Dog::operator=(const Dog& original)
+{
+    if (this != &original)
     {
+        delete DogBrain;
         DogBrain = new Brain(*original.DogBrain);
         type = original.type;
     }
+    return (*this);
 }
 
 void Dog::makeSound() const
@@ -21,15 +29,15 @@ void Dog::makeSound() const
     std::cout << type << " bark\n";
 }
 
-Dog& Dog::operator=(const Dog& original)
+
+void Dog::setCbrain(std::string cont)
 {
-    if (this->DogBrain != original.DogBrain)
-    {
-        delete DogBrain;
-        DogBrain = new Brain(*original.DogBrain);
-        type = original.type;
-    }
-    return (*this);
+    DogBrain->setIdea(cont);
+}
+
+void Dog::getCbrain()
+{
+    DogBrain->getIdea();
 }
 
 Dog::~Dog()
