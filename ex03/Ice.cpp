@@ -6,9 +6,12 @@ Ice::Ice()
     type = "ice";
 }
 
-Ice::Ice(const Ice& original)
+Ice::Ice(const Ice& original) : AMateria(original){} // we should call the base copy first
+
+Ice& Ice::operator=(const Ice& original)
 {
-    this->type = original.type; 
+    AMateria::operator=(original);
+    return (*this);
 }
 
 AMateria* Ice::clone() const
@@ -17,11 +20,6 @@ AMateria* Ice::clone() const
     return (obj);
 }
 
-// Ice::Ice(const Ice& original)
-// {
-
-// }
-
 void Ice::use(ICharacter& target)
 {
     std::cout << "* shoots an ice bolt at " << target.getName() << " *\n";
@@ -29,4 +27,3 @@ void Ice::use(ICharacter& target)
 
 Ice::~Ice()
 {}
-

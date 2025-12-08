@@ -4,26 +4,24 @@
 AMateria::AMateria(){}
 
 
-AMateria::AMateria(std::string const & type) : type(type)
-{
-}
+AMateria::AMateria(std::string const & type) : type(type){}
 
 AMateria::AMateria(const AMateria& original)
 {
-    type = original.type; // i know it doesnt make sense 
+    type = original.type;
 }
 
 AMateria& AMateria::operator=(const AMateria& original)
 {
-    type = original.type; // i know it doesnt make sense
+    type = original.type;
     return (*this);
 }
 
 void AMateria::use(ICharacter& target)
 {
-    if (getType().compare("ice"))
+    if (getType() == "ice")
         std::cout << "* shoots an ice bolt at " << target.getName() << " *\n";
-    else if (getType().compare("cure"))
+    else if (getType() == "cure")
         std::cout << "* heals " << target.getName() << "’s wounds *\n";
 }
 

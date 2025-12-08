@@ -1,7 +1,6 @@
 #ifndef AMATERIA_HPP
 #define AMATERIA_HPP
 #include <iostream>
-
 class ICharacter;
 
 class AMateria
@@ -10,7 +9,7 @@ class AMateria
             std::string type;
         public:
             AMateria();
-            AMateria(std::string const &type); 
+            AMateria(std::string const &type);
             AMateria(const AMateria& original);
             AMateria& operator=(const AMateria& original);
             std::string const & getType() const; //Returns the materia type
